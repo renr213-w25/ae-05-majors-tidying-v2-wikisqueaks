@@ -35,13 +35,15 @@ statsci
 #| label: pivot
 
 # add your code here
-  
-  
+
+df <- statsci |> 
+  pivot_longer(cols = "2011":last_col(), names_to = "year", values_to = "n")
+
 ```
 
 -   **Question:** What is the type of the `year` variable? Why? What should it be?
 
-*Add your response here.*
+The data type of the column is `r typeof(df$year)`. It should be numeric.
 
 -   **Demo:** Start over with pivoting, and this time also make sure `year` is a numerical variable in the resulting data frame.
 
